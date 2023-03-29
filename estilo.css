@@ -1,7 +1,11 @@
-body{
+body {
     padding: 30px;
 }
 
-#toDoList{
+#toDoList {
     margin-top: 10px;
+}
+
+ul {
+    list-style: none;
 }
