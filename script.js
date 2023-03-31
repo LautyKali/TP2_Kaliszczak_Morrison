@@ -19,11 +19,13 @@ const mostrarList = () => {
     toDoList.forEach(element => {
         let li = document.createElement("li");
         if (element.realizado) {
-            li.innerHTML = `<label id="label"><input id="check" value="${element.tarea}" type="checkbox" checked>${element.tarea}<button id="borrar" type="button" class="btn-close btn-sm" aria-label="Close"></button></label>`;
+            li.innerHTML = `<label id="label"><input id="check" value="${element.tarea}" type="checkbox" checked>${element.tarea}<button id="borrar" type="button" class="btn-close btn-close-red btn-sm" aria-label="Close"></button></label>`;
             li.firstChild.style.textDecoration = "line-through";
+            li.firstChild.style.opacity= "20%";
         } else {
             li.innerHTML = `<label id="label"><input id="check" value="${element.tarea}" type="checkbox">${element.tarea}<button id="borrar" type="button" class="btn-close btn-sm" aria-label="Close"></button></label>`;
             li.firstChild.style.textDecoration = "none";
+            li.firstChild.style.opacity= "100%";
         }
         ul.appendChild(li);
     });
@@ -35,12 +37,14 @@ const mostrarList = () => {
                 toDoList[index].realizado = true;
                 toDoList[index].fechaRealizado = new Date;
                 e.target.parentElement.style.textDecoration = "line-through";
+                e.target.parentElement.style.opacity = "20%";
             }
             else {
                 let index = busquedaLineal(e.target.value);
                 toDoList[index].realizado = false;
                 toDoList[index].fechaRealizado = null;
                 e.target.parentElement.style.textDecoration = "none";
+                e.target.parentElement.style.opacity = "100%";
             }
         };
     });
