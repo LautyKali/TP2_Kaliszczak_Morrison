@@ -8,6 +8,21 @@ body {
 h1 {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    animation-duration: 4s;
+    animation-name: slidein;
+
+}
+
+@keyframes slidein {
+    from {
+        margin-bottom: 100%;
+        width: 300%
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
 }
 
 #toDoList {
